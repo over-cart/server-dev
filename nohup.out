@@ -1,0 +1,13 @@
+ * Running on http://0.0.0.0:9998/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 109-767-414
+ * Detected change in '/home/ubuntu/myworkspace/server-dev/runserver.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 109-767-414
+ * Detected change in '/home/ubuntu/myworkspace/server-dev/runserver.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 109-767-414
+218.146.0.94 - - [19/Sep/2016 08:46:37] "GET /overcart/ HTTP/1.1" 200 -
