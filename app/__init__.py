@@ -4,6 +4,6 @@ from flask_socketio import SocketIO
 app = Flask(__name__)
 app.secret_key = "mysecret"
 
-socket_io = SocketIO(app)
+# socket_io = SocketIO(app)
 
 from app.routes import *
