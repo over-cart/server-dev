@@ -8,11 +8,11 @@ from flask_socketio import send
 def index():
     return "index"
 
-@app.route('/soma/')
+@app.route('/overcart/')
 def hello_world():
     return "Hello Gaemigo Project Home Page!!"
 
-@app.route('/soma/chat')
+@app.route('/overcart/chat')
 def chatting():
     return render_template('chat2.html')
 
