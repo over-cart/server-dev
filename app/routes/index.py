@@ -3,6 +3,7 @@ from app import app
 from flask import render_template, jsonify, request
 from subprocess import call
 from flask_socketio import send
+from datetime import datetime
 
 
 @app.route('/')
@@ -21,11 +22,15 @@ def chatting():
 @app.route('/overcart/trace', methods=['GET', 'POST'])
 def trace_cart():
     if request.method == 'GET':
-        return "This is GET type Request"
+        return "This is GET type Request, <br>Please do POST type in JSON format... "
     elif request.method == 'POST':
         value = request.json
         print(value)
-        return value['name']
+        to_client = dict()
+        to_client['response_time'] = datetime.now()
+        to_client['rasp_id'] = value['rasp_id']
+        to_client['card_id'] = value['card_id']
+        return jsonify(to_client)
 
 @app.route('/data')
 def data():
