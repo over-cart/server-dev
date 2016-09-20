@@ -47,61 +47,75 @@
 		}
 		);
 	}
+     function replace_color(cell_array){
+         for(i=0; i<cell_array.length; i++){
+             console.log("helloworld"+cell_array[i])
+             if(cell_array[i] == 1){
+                 console.log("cell_"+cell_array[i]);
+                  document.getElementById("cell_"+i).style.backgroundColor='#003e44';
+             }else{
+                 console.log(i);
+             }
+         }
+     }
  </script>
 
  </head>
  <body>
 
-	<table id="mytable">
+
+     <table id="mytable">
 	<tr id="tr0">
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)" id="cell_0"> </td>
+		<td onclick="myFunction(this)" id="cell_1"> </td>
+		<td onclick="myFunction(this)" id="cell_2"> </td>
+		<td onclick="myFunction(this)" id="cell_3"> </td>
+		<td onclick="myFunction(this)" id="cell_4"> </td>
+		<td onclick="myFunction(this)" id="cell_5"> </td>
 	</tr>
 	<tr id="tr1">
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)" id="cell_6"> </td>
+		<td onclick="myFunction(this)" id="cell_7"> </td>
+		<td onclick="myFunction(this)" id="cell_8"> </td>
+		<td onclick="myFunction(this)" id="cell_9"> </td>
+		<td onclick="myFunction(this)" id="cell_10"> </td>
+		<td onclick="myFunction(this)" id="cell_11"> </td>
 	</tr>
 	<tr id="tr2">
-	    <td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
+	    <td onclick="myFunction(this)" id="cell_12"> </td>
+		<td onclick="myFunction(this)" id="cell_13"> </td>
+		<td onclick="myFunction(this)" id="cell_14"> </td>
+		<td onclick="myFunction(this)" id="cell_15"> </td>
+		<td onclick="myFunction(this)" id="cell_16"> </td>
+		<td onclick="myFunction(this)" id="cell_17"> </td>
 	</tr>
 	<tr id="tr3">
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)" id="cell_18"> </td>
+		<td onclick="myFunction(this)" id="cell_19"> </td>
+		<td onclick="myFunction(this)" id="cell_20"> </td>
+		<td onclick="myFunction(this)" id="cell_21"> </td>
+		<td onclick="myFunction(this)" id="cell_22"> </td>
+		<td onclick="myFunction(this)" id="cell_23"> </td>
 	</tr>
 	<tr id="tr4">
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)" id="cell_24"> </td>
+		<td onclick="myFunction(this)" id="cell_25"> </td>
+		<td onclick="myFunction(this)" id="cell_26"> </td>
+		<td onclick="myFunction(this)" id="cell_27"> </td>
+		<td onclick="myFunction(this)" id="cell_28"> </td>
+		<td onclick="myFunction(this)" id="cell_29"> </td>
 	</tr>
 	<tr id="tr5">
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
-		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)" id="cell_30"> </td>
+		<td onclick="myFunction(this)" id="cell_31"> </td>
+		<td onclick="myFunction(this)" id="cell_32"> </td>
+		<td onclick="myFunction(this)" id="cell_33"> </td>
+		<td onclick="myFunction(this)" id="cell_34"> </td>
+		<td onclick="myFunction(this)" id="cell_35"> </td>
 	</tr>
 	</table>
-		
+
+     <script>replace_color([1,0,1,1,1,1, 0,1,0,0,1,0, 1,1,0,0,0,1, 1,0,1,0,0,1, 1,1,0,0,0,1, 0,1,1,1,0,0]);</script>
+
  </body>
 </html>
