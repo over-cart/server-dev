@@ -46,6 +46,20 @@ def others():
     print(value)
     return "other program run in background"
 
+@app.route('/admin', methods=['GET,POST'])
+def retrive():
+    if request.method == 'GET':
+        return "This is GET type Request, <br>Please do POST type in JSON format... "
+    elif request.method == 'POST':
+        value = request.json
+        print(value)
+        to_client = dict()
+        to_client['response_time'] = datetime.now()
+        to_client['rasp_id'] = value['rasp_id']
+        to_client['card_id'] = value['card_id']
+        return jsonify(to_client)
+
+
 # @socket_io.on("hello")
 # def hello(message):
 #     print(">>Hello : ", message)

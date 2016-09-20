@@ -28,11 +28,11 @@ class mysql_connector:
     # Cart 테이블 DML
     ##
 
-    def insert_cart(self, start_time, cart_num):
+    def insert_cart(self, start_time, cart_num, cart_mac):
         try:
             with self.connect.cursor() as cursor:
-                sql = "insert into Cart(Start_time,Cart_num) values(%s,%s)"
-                cursor.execute(sql, (start_time.strftime("%Y-%m-%d %H:%M:%S"), cart_num))
+                sql = "insert into Cart(Start_time,Cart_num,Cart_mac) values(%s,%s,%s)"
+                cursor.execute(sql, (start_time.strftime("%Y-%m-%d %H:%M:%S"), cart_num, cart_mac))
                 print(self.connect.commit())
 
         except:
@@ -106,11 +106,11 @@ class mysql_connector:
         except:
             self.connect.close()
 
-    def update_node(self,card_id,location_id,cartegory):
+    def update_node(self,card_id,location_id,category):
         try:
             with self.connect.cursor() as cursor:
                 sql = "update node set location_id = %s, category = %s where card_id = %s"
-                cursor.execute(sql, (location_id,cartegory, card_id))
+                cursor.execute(sql, (location_id,category, card_id))
                 print(self.connect.commit())
 
         except:
@@ -193,6 +193,48 @@ class mysql_connector:
 
         except:
             self.connect.close()
+
+    ##
+    # 해당 노드에 몇번의 신호가 왔는지(=카트들이 몇번 지나갔는지)를 파악하는 SQL입니다.
+    ##
+
+    def node_statistic(self,card_id):
+        try:
+            with self.connect.cursor() as cursor:
+                sql = "select card_id,count(Sign_id) from Node NATURAL JOIN Sign group by card_id having card_id = %s"
+                cursor.execute(sql, card_id)
+                result = cursor.fetch
+                print(self.connect.commit())
+                return result
+
+        except:
+            self.connect.close()
+            return null
+
+    ##
+    # 노드와 엣지를 읽고 그래프 인접행렬을 그리는 함수입니다.
+    ##
+
+    def graph_create(self):
+        try:
+            node_index = 0
+            node_dict = []
+            with self.connect.cursor() as cursor:
+                sql = "select node_id from Node"
+                cursor.execute(sql)
+                result = cursor.fetchall()
+                for node in result:
+                    node_dict.insert(node,node_index++ )
+            with self.connect.cursor() as cursor:
+                sql = "select node_id,node_id2 from Node NATURAL JOIN Edge"
+                cursor.execute(sql)
+                result = cursor.fetchall()
+                print(self.connect.commit())
+                return result
+
+        except:
+            self.connect.close()
+            return null
 
 
 connector = mysql_connector(DBHOST,DBPort,DBUser,DBPassword,DBDb)
