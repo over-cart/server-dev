@@ -18,6 +18,10 @@ def hello_world():
 def chatting():
     return render_template('index-overcart.html')
 
+@app.route('/overcart/map')
+def shop_map():
+    return render_template('map-cell.html')
+
 # 카트의 움직임을 따라서 변화하는 정보를 받을 예정입니다 .
 @app.route('/overcart/trace', methods=['GET', 'POST'])
 def trace_cart():

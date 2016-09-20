@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+	table, th, td {
+		border: 2px solid black;
+		border-collapse: collapse;
+	}
+	th, td {
+		padding: 70px;
+		text-align: left;
+	}
+ </style>
+
+ <script>
+	
+
+	function myFunction(cell){
+		cell.style.backgroundColor='#003F87';
+	}
+
+
+	//var array_loc = 
+	function represent(){//array_loc){
+		
+		var array_loc = [1,0,1,1,1,1, 0,1,0,0,1,0, 1,1,0,0,0,1, 1,0,1,0,0,1, 1,1,0,0,0,1, 0,1,1,1,0,0];
+		
+		var table = document.getElementById("mytable");
+		var rows = table.getElementsByTagName("tr");
+		var cols = rows[0].getElementsByTagName("td");
+		
+		array_loc.forEach(function(current_value, index, initial_array){
+			if(current_value==1)
+			{	
+				var row = parseInt(index/cols.length);
+				var column = parseInt(index%cols.length);
+				table.rows[row].getElementsByTagName("td")[column].style.backgroundColor='#003F87';
+				
+				//console.log(current_value, index, parseInt(index/cols.length));
+			}
+		}
+		);
+	}
+ </script>
+
+ </head>
+ <body>
+
+	<table id="mytable">
+	<tr id="tr0">
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+	</tr>
+	<tr id="tr1">
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+	</tr>
+	<tr id="tr2">
+	    <td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+	</tr>
+	<tr id="tr3">
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+	</tr>
+	<tr id="tr4">
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+	</tr>
+	<tr id="tr5">
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+		<td onclick="myFunction(this)"> </td>
+	</tr>
+	</table>
+		
+ </body>
+</html>
