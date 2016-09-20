@@ -209,7 +209,7 @@ class mysql_connector:
 
         except:
             self.connect.close()
-            return null
+            return None
 
     ##
     # 노드와 엣지를 읽고 그래프 인접행렬을 그리는 함수입니다.
@@ -224,7 +224,8 @@ class mysql_connector:
                 cursor.execute(sql)
                 result = cursor.fetchall()
                 for node in result:
-                    node_dict.insert(node,node_index++ )
+                    node_index += 1
+                    node_dict.insert(node, node_index)
             with self.connect.cursor() as cursor:
                 sql = "select node_id,node_id2 from Node NATURAL JOIN Edge"
                 cursor.execute(sql)
@@ -234,7 +235,7 @@ class mysql_connector:
 
         except:
             self.connect.close()
-            return null
+            return None
 
 
 connector = mysql_connector(DBHOST,DBPort,DBUser,DBPassword,DBDb)
