@@ -79,3 +79,8 @@ def others():
     #         to_client['type'] = 'normal'
     #     # emit("response", {'data': message['data'], 'username': session['username']}, broadcast=True)
     #     send(to_client, broadcast=True)
+
+
+@app.route('/overcart/map')
+def map_cell():
+    return render_template('map-cell.html')
